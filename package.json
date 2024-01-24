@@ -2,7 +2,9 @@
   "name": "@angular-utils/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "publish:angular-utils": "nx build angular-utils && cd dist/libs/angular-utils && npm publish"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~17.0.0",

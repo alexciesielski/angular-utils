@@ -23,8 +23,21 @@
     },
     {
       "files": ["*.ts", "*.tsx"],
-      "extends": ["plugin:@nx/typescript"],
-      "rules": {}
+      "parserOptions": {
+        "project": ["tsconfig.*?.json"]
+      },
+      "plugins": ["rxjs"],
+      "extends": [
+        "plugin:@nx/typescript",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:rxjs/recommended"
+      ],
+      "rules": {
+        "@typescript-eslint/array-type": [
+          "error",
+          { "default": "array-simple" }
+        ]
+      }
     },
     {
       "files": ["*.js", "*.jsx"],

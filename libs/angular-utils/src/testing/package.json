@@ -1,0 +1,11 @@
+{
+  "ngPackage": {
+    "lib": {
+      "entryFile": "index.ts",
+      "umdModuleIds": {}
+    }
+  },
+  "peerDependencies": {
+    "ts-mockery": "^1.2.0"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "ngPackage": {
+    "lib": {
+      "entryFile": "index.ts",
+      "umdModuleIds": {}
+    }
+  },
+  "peerDependencies": {
+    "@ngneat/falso": "^7.0.0"
+  }
+}

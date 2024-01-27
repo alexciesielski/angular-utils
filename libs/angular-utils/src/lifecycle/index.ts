@@ -4,3 +4,4 @@ export * from './rx-input';
 export * from './rx-on-destroy';
 export * from './rx-on-init';
 export * from './rx-view-child';
+export * from './until-destroyed';

@@ -63,7 +63,7 @@ export class StorybookInitWhenComponent implements AfterViewInit, OnDestroy {
         const style = document.createElement('style');
         style.innerHTML = this.hostStyles.join('\n');
         host.appendChild(style);
-        this.hostStylesElement;
+        this.hostStylesElement = style;
       }
     }
 

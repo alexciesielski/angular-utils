@@ -3,6 +3,7 @@ import { importProvidersFrom, ɵNG_MOD_DEF } from '@angular/core';
 import { AngularRenderer, applicationConfig, componentWrapperDecorator, moduleMetadata } from '@storybook/angular';
 import { DecoratorFunction } from '@storybook/types';
 import {
+  STORYBOOK_HOST_CLASSES,
   STORYBOOK_HOST_STYLES,
   STORYBOOK_INIT_WHEN,
   STORYBOOK_RUN_ON_INIT,
@@ -28,10 +29,23 @@ export interface StorybookConfig {
    * CSS styles to apply to the host component
    */
   styles?: string[];
+  /**
+   * CSS classes to apply to the host component
+   */
+  classes?: string[];
 }
 
 export function decorateStorybook(config: StorybookConfig = {}): Array<DecoratorFunction<AngularRenderer, unknown>> {
-  const { globals = [], imports = [], providers = [], declarations = [], initWhen, runOnInit, styles } = config;
+  const {
+    globals = [],
+    imports = [],
+    providers = [],
+    declarations = [],
+    initWhen,
+    runOnInit,
+    styles,
+    classes,
+  } = config;
 
   const decorators = [];
 
@@ -53,6 +67,13 @@ export function decorateStorybook(config: StorybookConfig = {}): Array<Decorator
     globals.push({
       provide: STORYBOOK_HOST_STYLES,
       useValue: styles,
+    });
+  }
+
+  if (classes) {
+    globals.push({
+      provide: STORYBOOK_HOST_CLASSES,
+      useValue: classes,
     });
   }
 

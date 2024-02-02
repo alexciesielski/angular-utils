@@ -44,7 +44,7 @@ export function decorateStorybook(config: StorybookConfig = {}): Array<Decorator
     initWhen,
     runOnInit,
     styles,
-    bodyClasses: classes,
+    bodyClasses,
   } = config;
 
   const decorators = [];
@@ -70,10 +70,10 @@ export function decorateStorybook(config: StorybookConfig = {}): Array<Decorator
     });
   }
 
-  if (classes) {
+  if (bodyClasses) {
     globals.push({
       provide: STORYBOOK_BODY_CLASSES,
-      useValue: classes,
+      useValue: bodyClasses,
     });
   }
 
@@ -86,7 +86,7 @@ export function decorateStorybook(config: StorybookConfig = {}): Array<Decorator
     })
   );
 
-  if (initWhen || runOnInit || styles) {
+  if (initWhen || runOnInit || styles || bodyClasses) {
     decorators.push(
       moduleMetadata({ imports: [StorybookInitWhenComponent] }),
       componentWrapperDecorator(StorybookInitWhenComponent)

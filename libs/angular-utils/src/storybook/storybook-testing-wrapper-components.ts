@@ -68,9 +68,9 @@ export class StorybookInitWhenComponent implements AfterViewInit, OnDestroy {
     }
 
     if (this.bodyClasses) {
-      const host = document.querySelector('body');
-      if (host) {
-        host.classList.add(...this.bodyClasses);
+      const body = document.querySelector('body');
+      if (body) {
+        body.classList.add(...this.bodyClasses);
       }
     }
   }
@@ -81,9 +81,9 @@ export class StorybookInitWhenComponent implements AfterViewInit, OnDestroy {
     }
 
     if (this.bodyClasses) {
-      const host = document.querySelector('body');
-      if (host) {
-        host.classList.remove(...this.bodyClasses);
+      const body = document.querySelector('body');
+      if (body) {
+        body.classList.remove(...this.bodyClasses);
       }
     }
   }

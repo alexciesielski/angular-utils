@@ -1,6 +1,6 @@
 {
   "name": "@alexciesielski/angular-utils",
-  "version": "17.3.1",
+  "version": "17.3.2",
   "peerDependencies": {
     "@angular/common": "^17.0.0",
     "@angular/core": "^17.0.0",

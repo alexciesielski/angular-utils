@@ -36,6 +36,9 @@ export const mockAll = <T>(provide: ConstructorFunction<T> | Type<T> | Injection
  * @param provider the service to be extended
  * @param extendWith the value to extend the service with
  */
-export function extendMockProvider<T>(provider: Type<T> | InjectionToken<T>, extendWith: RecursivePartial<T>): void {
+export function extendMockProvider<T>(
+  provider: ConstructorFunction<T> | Type<T> | InjectionToken<T>,
+  extendWith: RecursivePartial<T>
+): void {
   Mock.extend(TestBed.inject(provider)).with(extendWith);
 }
